@@ -39,7 +39,8 @@ public class MongoService implements Service {
 
     @Override
     public RewardType getReward(String categoryId, String rewardId) {
-        return datastore.find(RewardType.class).field("categoryId").equal(categoryId).field("rewardId").equal(rewardId).get().withMongoId(null);
+        return datastore.find(RewardType.class).field("categoryId").equal(categoryId).field("rewardId").equal(rewardId).get()
+                .withMongoId(null).withCategoryId(null).withRewardId(null);
     }
 
     @Override

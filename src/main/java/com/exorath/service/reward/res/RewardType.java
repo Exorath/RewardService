@@ -11,7 +11,7 @@ import java.util.List;
 @Entity("rewards")
 @Indexes({
         @Index(fields = @Field("rewardId")),
-        @Index(fields = @Field("typeId"))
+        @Index(fields = @Field("categoryId"))
 })
 public class RewardType {
     @Id
@@ -20,7 +20,7 @@ public class RewardType {
     private String rewardId;
     //fe normalchests
     @Property("categoryId")
-    private transient String categoryId;
+    private String categoryId;
     //fe GADGETS,CURRENCY
     private String type;
     private String rarity;
@@ -65,6 +65,16 @@ public class RewardType {
 
     public RewardType withMongoId(String mongoId) {
         this.mongoId = mongoId;
+        return this;
+    }
+
+    public RewardType withRewardId(String rewardId) {
+        this.rewardId = rewardId;
+        return this;
+    }
+
+    public RewardType withCategoryId(String categoryId) {
+        this.categoryId = categoryId;
         return this;
     }
 }
