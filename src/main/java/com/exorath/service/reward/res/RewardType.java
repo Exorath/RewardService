@@ -14,7 +14,8 @@ import java.util.List;
         @Index(fields = @Field("typeId"))
 })
 public class RewardType {
-
+    @Id
+    private transient String mongoId;
     @Property("rewardId")
     private String rewardId;
     //fe normalchests
