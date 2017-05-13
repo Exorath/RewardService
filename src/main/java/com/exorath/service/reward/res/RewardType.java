@@ -15,7 +15,7 @@ import java.util.List;
 })
 public class RewardType {
     @Id
-    private transient String mongoId;
+    private String mongoId;
     @Property("rewardId")
     private String rewardId;
     //fe normalchests
@@ -61,5 +61,10 @@ public class RewardType {
 
     public JsonObject getSpec() {
         return spec;
+    }
+
+    public RewardType withMongoId(String mongoId) {
+        this.mongoId = mongoId;
+        return this;
     }
 }

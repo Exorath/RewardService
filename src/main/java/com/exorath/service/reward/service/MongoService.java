@@ -39,7 +39,7 @@ public class MongoService implements Service {
 
     @Override
     public RewardType getReward(String categoryId, String rewardId) {
-        return datastore.find(RewardType.class).field("categoryId").equal(categoryId).field("rewardId").equal(rewardId).get();
+        return datastore.find(RewardType.class).field("categoryId").equal(categoryId).field("rewardId").equal(rewardId).get().withMongoId(null);
     }
 
     @Override
@@ -92,5 +92,4 @@ public class MongoService implements Service {
     private Query<RewardType> getRewardTypeQuery() {
         return datastore.createQuery(RewardType.class);
     }
-
 }
