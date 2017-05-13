@@ -60,7 +60,7 @@ public class MongoService implements Service {
         try {
             int quality = req.getQuality() == null ? 1 : req.getQuality();
             Rarity randomRarity = Rarity.getRandomRarity(quality);
-            List<RewardType> rewardTypes = datastore.find(RewardType.class).project("_id", true).project("rarity", true)
+            List<RewardType> rewardTypes = datastore.find(RewardType.class).retrievedFields(true,"_id", "rarity")
                     .field("categoryId").equal(req.getCategoryId())
                     .field("rarity").equal(randomRarity.toString())
                     .asList();
