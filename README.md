@@ -93,3 +93,10 @@ The quality represents the chance of getting better rewards (0-5), higher is bet
   "amount": 512
 }}
 ```
+
+## Environment
+| Name | Value |
+| --------- | --- |
+| MONGO_URI | {mongo_uri} |
+| DB_NAME | {db name to store data} |
+| GADGETS_SERVICE_ADDRESS | http://gadgetsservice:8080 |
